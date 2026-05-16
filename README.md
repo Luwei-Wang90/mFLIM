@@ -54,11 +54,33 @@ For image reconstruction using MATLAB, please follow the procedure below:
 Important: (1) The alpha value is experiment-specific and must be calibrated on your system. It depends on the optical path delay between the Gaussian and the modulated beam; (2) The d value can be chosen by running the script once, examining the Fourier spectrum plot, and selecting a radius that includes the central low-frequency components while excluding high-frequency noise; (3) The beta value may need re-optimization when you change samples or imaging conditions. Always start low and increase stepwise.
 
 ## 4. Example
-A complete walkthrough using example data (provided in the working folder of this repository): 1. Prepare data: Copy the example .sdt file and its corresponding .asc reference file into the working folder; 2. Open MATLAB R2019b and navigate to the repository root; 3. Run mFLIM_v2605.m; 4. In the file dialog, select the example .sdt file; 5. The script will process the data and generate: Ig.tif, Id.tif, Id_smooth.tif, Im.tif, and mFLIM_image.tif; 6. The output mFLIM_image.tif integrates super‑resolved structural intensity (encoded in the value channel) with quantitative lifetime information (encoded in the hue channel), following the HSV‑to‑RGB visualization described in the paper.
+A complete walkthrough using example data (provided in the working folder of this repository):
+
+1. Prepare data: Copy the example .sdt file and its corresponding .asc reference file into the working folder;
+
+2. Open MATLAB R2019b and navigate to the repository root;
+
+3. Run mFLIM_v2605.m;
+
+4. In the file dialog, select the example .sdt file;
+
+5. The script will process the data and generate: Ig.tif, Id.tif, Id_smooth.tif, Im.tif, and mFLIM_image.tif;
+
+6. The output mFLIM_image.tif integrates super‑resolved structural intensity (encoded in the value channel) with quantitative lifetime information (encoded in the hue channel), following the HSV‑to‑RGB visualization described in the paper.
+
 To verify correct reconstruction, compare the lifetime values from the output image with those obtained from SPCImage fitting of the Part 1 channels (deviation should be <3%).
 
 ## 5. Output Description
-The final output mFLIM_image.tif is a 24‑bit RGB image where: 1. Hue (color) encodes the fluorescence lifetime (scaled by lifetime scale); 2. Value (brightness) encodes the super‑resolved intensity from the subtraction step; 3. Saturation is fixed to maximum (1) to ensure clear color contrast. For quantitative analysis, the script also saves the following intermediate files in the same folder: 1. Ig.tif – Confocal intensity image (sum of Part 1 channels); 2. Id.tif – Raw donut intensity image (sum of Part 2 channels); 3. Id_smooth.tif – Low‑pass filtered donut image (after Fourier domain smoothing); 4. Im.tif – Super‑resolved intensity image (Ig - beta*Id_smooth), normalized to [0, 1].
+The final output mFLIM_image.tif is a 24‑bit RGB image where:
+
+1. Hue (color) encodes the fluorescence lifetime (scaled by lifetime scale);
+
+2. Value (brightness) encodes the super‑resolved intensity from the subtraction step;
+
+3. Saturation is fixed to maximum (1) to ensure clear color contrast. For quantitative analysis, the script also saves the following intermediate files in the same folder: 1. Ig.tif – Confocal intensity image (sum of Part 1 channels); 2. Id.tif – Raw donut intensity image (sum of Part 2 channels); 3. Id_smooth.tif – Low‑pass filtered donut image (after Fourier domain smoothing);
+
+4. Im.tif – Super‑resolved intensity image (Ig - beta*Id_smooth), normalized to [0, 1].
+
 Note: The script currently does not save the lifetime map separately, but you can easily add “imwrite(uint16(lifetime), ‘lifetime_map.tif’)” after normalization if needed.
 
 ## 6. License
