@@ -2,12 +2,16 @@
 
 This software package provides a reference implementation of the mFLIM technique described in our paper:
 “mFLIM: capturing nanoscale 3D organelle architecture and dynamics via spatiotemporal multiplexed FLIM”
+
 Luwei Wang, Min Yi, Yue Chen, Zhongyang Liu, Renlong Zhang, Xiaoyu Weng, Liwei Liu, Junle Qu*
 
 The mFLIM technique enables volumetric super-resolution reconstruction of fluorescence lifetime images from spatiotemporally encoded FLIM data acquired with a single excitation wavelength and a single detection channel.
 
 ## 1. Prerequisites
-Ensure the following software is installed and configured on your system: 1. MATLAB (R2019b or later compatible versions); 2. Bio-Formats Toolbox for MATLAB (a. Required for reading Becker & Hickl TCSPC .sdt files; b. Download from: https://docs.openmicroscopy.org/bio-formats/; c. Follow the official installation instructions to add the toolbox to your MATLAB path).
+Ensure the following software is installed and configured on your system: 
+
+1. MATLAB (R2019b or later compatible versions);
+2. Bio-Formats Toolbox for MATLAB (a. Required for reading Becker & Hickl TCSPC .sdt files; b. Download from: https://docs.openmicroscopy.org/bio-formats/; c. Follow the official installation instructions to add the toolbox to your MATLAB path).
 
 ## 2. Data Preparation
 Before starting, please prepare the following data files: 1. Raw mFLIM Data (a. Spatiotemporally encoded FLIM data in Becker & Hickl TCSPC format (.sdt files); b, These files contain the time-tagged photon stream recorded under dual‑beam excitation (Gaussian beam + time‑delayed 3D cage beam)); 2. Reference Lifetime Map (a. The fluorescence lifetime map (in .asc format) obtained by fitting the Part 1 (Gaussian‑excited) decay channels from the same dataset, typically generated using software such as SPCImage (Becker & Hickl); b. This map serves as a reference for lifetime scaling and is required for the final HSV color mapping).
