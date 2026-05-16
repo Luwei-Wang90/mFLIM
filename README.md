@@ -26,7 +26,7 @@ Before starting, please prepare the following data files:
    
    a. Spatiotemporally encoded FLIM data in Becker & Hickl TCSPC format (.sdt files)
    
-   b, These files contain the time-tagged photon stream recorded under dual‑beam excitation (Gaussian beam + time‑delayed 3D cage beam));
+   b. These files contain the time-tagged photon stream recorded under dual‑beam excitation (Gaussian beam + time‑delayed 3D cage beam)
    
 3.  Reference Lifetime Map:
    
