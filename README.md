@@ -28,11 +28,10 @@ Before starting, please prepare the following data files:
    
    b. These files contain the time-tagged photon stream recorded under dual‑beam excitation (Gaussian beam + time‑delayed 3D cage beam)
    
-3.  Reference Lifetime Map:
+2.  Reference Lifetime Map:
+   a . The fluorescence lifetime map (in .asc format) obtained by fitting the Part 1 (Gaussian‑excited) decay channels from the same dataset, typically generated using software such as SPCImage (Becker & Hickl)
    
-   a. The fluorescence lifetime map (in .asc format) obtained by fitting the Part 1 (Gaussian‑excited) decay channels from the same dataset, typically generated using software such as SPCImage (Becker & Hickl)
-   
-   b. This map serves as a reference for lifetime scaling and is required for the final HSV color mapping).
+   b. This map serves as a reference for lifetime scaling and is required for the final HSV color mapping)
 
 Note: The code expects the .asc file to be located in a subfolder (e.g., ./3 beads/) or you must modify the load file path in the script (line 121).
 
