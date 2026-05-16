@@ -11,6 +11,7 @@ The mFLIM technique enables volumetric super-resolution reconstruction of fluore
 Ensure the following software is installed and configured on your system: 
 
 1. MATLAB (R2019b or later compatible versions);
+
 2. Bio-Formats Toolbox for MATLAB:
    
 a. Required for reading Becker & Hickl TCSPC .sdt files
@@ -22,7 +23,7 @@ c. Follow the official installation instructions to add the toolbox to your MATL
 ## 2. Data Preparation
 Before starting, please prepare the following data files: 
 
-1. Raw mFLIM Data :
+1. Raw mFLIM Data:
    
 a. Spatiotemporally encoded FLIM data in Becker & Hickl TCSPC format (.sdt files)
    
@@ -77,7 +78,15 @@ The final output mFLIM_image.tif is a 24‑bit RGB image where:
 
 2. Value (brightness) encodes the super‑resolved intensity from the subtraction step;
 
-3. Saturation is fixed to maximum (1) to ensure clear color contrast. For quantitative analysis, the script also saves the following intermediate files in the same folder: 1. Ig.tif – Confocal intensity image (sum of Part 1 channels); 2. Id.tif – Raw donut intensity image (sum of Part 2 channels); 3. Id_smooth.tif – Low‑pass filtered donut image (after Fourier domain smoothing);
+3. Saturation is fixed to maximum (1) to ensure clear color contrast.
+
+For quantitative analysis, the script also saves the following intermediate files in the same folder:
+
+1. Ig.tif – Confocal intensity image (sum of Part 1 channels);
+
+2. Id.tif – Raw donut intensity image (sum of Part 2 channels);
+
+3. Id_smooth.tif – Low‑pass filtered donut image (after Fourier domain smoothing);
 
 4. Im.tif – Super‑resolved intensity image (Ig - beta*Id_smooth), normalized to [0, 1].
 
