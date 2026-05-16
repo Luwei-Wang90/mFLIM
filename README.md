@@ -12,8 +12,11 @@ Ensure the following software is installed and configured on your system:
 
 1. MATLAB (R2019b or later compatible versions);
 2. Bio-Formats Toolbox for MATLAB
-   2.1. Required for reading Becker & Hickl TCSPC .sdt files
-   b Download from: https://docs.openmicroscopy.org/bio-formats/
+   
+   a. Required for reading Becker & Hickl TCSPC .sdt files
+   
+   b. Download from: https://docs.openmicroscopy.org/bio-formats/
+   
    c. Follow the official installation instructions to add the toolbox to your MATLAB path)
 
 ## 2. Data Preparation
