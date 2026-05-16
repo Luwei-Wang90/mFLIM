@@ -37,7 +37,20 @@ b. This map serves as a reference for lifetime scaling and is required for the f
 Note: The code expects the .asc file to be located in a subfolder (e.g., ./3 beads/) or you must modify the load file path in the script (line 121).
 
 ## 3. Processing Workflow
-For image reconstruction using MATLAB, please follow the procedure below: 1. Start MATLAB and navigate to the folder containing the mFLIM_v2605.m script and your data files; 2. Open and run the script mFLIM_v2605.m; 3. A file dialog box will appear. Select the target .sdt file to be processed; 4. The script will automatically load and parse the spatiotemporal photon stream, separate photons into Part 1 (Gaussian‑excited) and Part 2 (modulated‑beam‑excited) channels based on the defined time channel boundary (α), generate the super‑resolved intensity image (Im) via weighted pixel‑wise subtraction, load the reference lifetime map (.asc file) and normalize it using lifetime_min and lifetime_max, fuse the super‑resolved intensity with the lifetime map to produce the final mFLIM image in HSV color space; 5. The output file is saved as mFLIM_image.tif in the same folder; 6. To ensure optimal results, key parameters must be set correctly in the code, including the time channel (α, line 48), the cutoff frequency radius (d, line 73), the weight coefficient (β, line 111), the lifetime scale (lines 125-126).
+For image reconstruction using MATLAB, please follow the procedure below:
+
+1. Start MATLAB and navigate to the folder containing the mFLIM_v2605.m script and your data files;
+
+2. Open and run the script mFLIM_v2605.m;
+   
+3. A file dialog box will appear. Select the target .sdt file to be processed;
+   
+4. The script will automatically load and parse the spatiotemporal photon stream, separate photons into Part 1 (Gaussian‑excited) and Part 2 (modulated‑beam‑excited) channels based on the defined time channel boundary (α), generate the super‑resolved intensity image (Im) via weighted pixel‑wise subtraction, load the reference lifetime map (.asc file) and normalize it using lifetime_min and lifetime_max, fuse the super‑resolved intensity with the lifetime map to produce the final mFLIM image in HSV color space;
+   
+5. The output file is saved as mFLIM_image.tif in the same folder;
+
+6. To ensure optimal results, key parameters must be set correctly in the code, including the time channel (α, line 48), the cutoff frequency radius (d, line 73), the weight coefficient (β, line 111), the lifetime scale (lines 125-126).
+   
 Important: (1) The alpha value is experiment-specific and must be calibrated on your system. It depends on the optical path delay between the Gaussian and the modulated beam; (2) The d value can be chosen by running the script once, examining the Fourier spectrum plot, and selecting a radius that includes the central low-frequency components while excluding high-frequency noise; (3) The beta value may need re-optimization when you change samples or imaging conditions. Always start low and increase stepwise.
 
 ## 4. Example
