@@ -11,7 +11,7 @@ The mFLIM technique enables volumetric super-resolution reconstruction of fluore
 Ensure the following software is installed and configured on your system: 
 
 1. MATLAB (R2019b or later compatible versions);
-2. Bio-Formats Toolbox for MATLAB
+2. Bio-Formats Toolbox for MATLAB:
    
    a. Required for reading Becker & Hickl TCSPC .sdt files
    
@@ -20,7 +20,20 @@ Ensure the following software is installed and configured on your system:
    c. Follow the official installation instructions to add the toolbox to your MATLAB path)
 
 ## 2. Data Preparation
-Before starting, please prepare the following data files: 1. Raw mFLIM Data (a. Spatiotemporally encoded FLIM data in Becker & Hickl TCSPC format (.sdt files); b, These files contain the time-tagged photon stream recorded under dual‑beam excitation (Gaussian beam + time‑delayed 3D cage beam)); 2. Reference Lifetime Map (a. The fluorescence lifetime map (in .asc format) obtained by fitting the Part 1 (Gaussian‑excited) decay channels from the same dataset, typically generated using software such as SPCImage (Becker & Hickl); b. This map serves as a reference for lifetime scaling and is required for the final HSV color mapping).
+Before starting, please prepare the following data files: 
+
+1. Raw mFLIM Data :
+   
+   a. Spatiotemporally encoded FLIM data in Becker & Hickl TCSPC format (.sdt files)
+   
+   b, These files contain the time-tagged photon stream recorded under dual‑beam excitation (Gaussian beam + time‑delayed 3D cage beam));
+   
+3.  Reference Lifetime Map:
+   
+   a. The fluorescence lifetime map (in .asc format) obtained by fitting the Part 1 (Gaussian‑excited) decay channels from the same dataset, typically generated using software such as SPCImage (Becker & Hickl)
+   
+   b. This map serves as a reference for lifetime scaling and is required for the final HSV color mapping).
+
 Note: The code expects the .asc file to be located in a subfolder (e.g., ./3 beads/) or you must modify the load file path in the script (line 121).
 
 ## 3. Processing Workflow
