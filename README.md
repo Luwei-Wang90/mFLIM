@@ -1,7 +1,7 @@
 # mFLIM: Multiplexed Fluorescence Lifetime Imaging Microscopy
 
 This software package provides a reference implementation of the mFLIM technique described in our paper:
-“mFLIM: capturing nanoscale 3D organelle architecture and dynamics via spatiotemporal multiplexed FLIM”
+“Multiplexed fluorescence lifetime imaging enables volumetric super-resolution without perturbing lifetime quantification”
 
 Luwei Wang, Min Yi, Yue Chen, Zhongyang Liu, Renlong Zhang, Xiaoyu Weng, Liwei Liu, Junle Qu*
 
